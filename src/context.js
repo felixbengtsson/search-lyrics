@@ -9,11 +9,11 @@ export class Provider extends Component {
     track_list: [
 
     ],
-    heading: 'Top 10 Tracks'
+    heading: 'Top 20 Tracks in Sweden'
   }
 
   componentDidMount() {
-    axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${process.env.REACT_APP_MM_KEY}`)
+    axios.get(`https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.tracks.get?page=1&page_size=20&country=se&f_has_lyrics=1&apikey=${process.env.REACT_APP_MM_KEY}`)
       .then(res => {
 
         this.setState({ track_list: res.data.message.body.track_list })
